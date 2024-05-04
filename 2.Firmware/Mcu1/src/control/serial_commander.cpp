@@ -129,7 +129,6 @@ void SerialCommander::GetCmd(const char *user_cmd, CubliMiniControl &control)
         // cmd_printf p param
         break;
     case SCMD_BYTE_2_W:
-    {
         cmd_printf(
             "WifiParam: use_wifi: %d ssid: %s password: %s server_port: %d ssid_len: %d "
             "password_len: %d\r\n",
@@ -139,13 +138,13 @@ void SerialCommander::GetCmd(const char *user_cmd, CubliMiniControl &control)
             control.wifi_param_.server_port,
             control.wifi_param_.wifi_ssid_len,
             control.wifi_param_.wifi_password_len);
-    }
-    break;
+        break;
     case SCMD_BYTE_2_A:
-    {
         output_angle_ = true;
-    }
-    break;
+        break;
+    case SCMD_BYTE_2_T:
+        output_angle_ = false;
+        break;
     default:
         cmd_printf("byte2 error\r\n");
         break;

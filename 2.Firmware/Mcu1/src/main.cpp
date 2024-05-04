@@ -106,7 +106,7 @@ void ModeTask(void *parameter)
         if (serial_commander.output_angle_)
         {
             printf(
-                "x: %0.2f y: %0.2f z: %0.2f\r\n",
+                "x: %0.2f y: %0.2f z: %0.2f\n",
                 cubli_mini.p_balance_.sensor.x.angle,
                 cubli_mini.p_balance_.sensor.y.angle,
                 cubli_mini.p_balance_.sensor.z.angle);

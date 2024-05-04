@@ -20,6 +20,7 @@ namespace Control {
 #define SCMD_BYTE_2_P 'P'  // point balance param
 #define SCMD_BYTE_2_U 'U'  // unilateral balance param
 #define SCMD_BYTE_2_S 'S'  // save param
+#define SCMD_BYTE_2_T 'T'  // truncate imu angle output
 #define SCMD_BYTE_2_W 'W'  // get wifi param
 
 #define SCMD_BYTE_3_X 'X'  //!< x axis
