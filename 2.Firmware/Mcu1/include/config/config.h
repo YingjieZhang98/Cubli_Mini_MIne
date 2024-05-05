@@ -9,8 +9,8 @@ namespace Config {
 #define IMU_INIT_GYRO_THRESHOLD     10
 #define IMU_STATIC_GYRO_THRESHOLD   8
 
-#define WIFI_DEFAULT_SSID            "TeLunSu"
-#define WIFI_DEFAULT_PASSWORD        "12345678"
+#define WIFI_DEFAULT_SSID            "ZYJ"
+#define WIFI_DEFAULT_PASSWORD        "13500060159"
 #define WIFI_DEFAULT_TCP_SERVER_PORT 1312
 
 #define P_BALANCE_X_P -8

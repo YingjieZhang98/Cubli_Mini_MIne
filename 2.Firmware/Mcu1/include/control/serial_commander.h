@@ -32,6 +32,7 @@ namespace Control {
 #define SCMD_BYTE_3_S 'S'  //!< k3
 #define SCMD_BYTE_3_A 'A'  //!< angle
 #define SCMD_BYTE_3_E 'E'  //!< angle
+#define SCMD_BYTE_3_C 'C'  //connect to wifi
 
 #define SCMD_BYTE_4_P 'P'  //!< k1
 #define SCMD_BYTE_4_V 'V'  //!< k2

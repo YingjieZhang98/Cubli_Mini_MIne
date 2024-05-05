@@ -214,8 +214,8 @@ void SerialCommander::SaveWifiParam(const char *user_cmd, CubliMiniControl &cont
     case SCMD_BYTE_3_S:
         if (cmd4 == ':')
         {
-            // 3 + 2是为了删除"\r\n", memset已经补0
-            int len = strlen(user_cmd) - 5 < WIFI_CHAR_LEN ? strlen(user_cmd) - 5 : WIFI_CHAR_LEN;
+            // 4（SWS:/SWP:） + 2是为了删除"\r\n", memset已经补0
+            int len = strlen(user_cmd) - 6 < WIFI_CHAR_LEN ? strlen(user_cmd) - 6 : WIFI_CHAR_LEN;
             control.wifi_param_.wifi_ssid_len = len;
             memset(control.wifi_param_.wifi_ssid, 0, WIFI_CHAR_LEN);
             memcpy(control.wifi_param_.wifi_ssid, &user_cmd[4], len);
@@ -230,7 +230,7 @@ void SerialCommander::SaveWifiParam(const char *user_cmd, CubliMiniControl &cont
     case SCMD_BYTE_3_P:
         if (cmd4 == ':')
         {
-            int len = strlen(user_cmd) - 5 < WIFI_CHAR_LEN ? strlen(user_cmd) - 5 : WIFI_CHAR_LEN;
+            int len = strlen(user_cmd) - 6 < WIFI_CHAR_LEN ? strlen(user_cmd) - 6 : WIFI_CHAR_LEN;
             control.wifi_param_.wifi_password_len = len;
             memset(control.wifi_param_.wifi_password, 0, WIFI_CHAR_LEN);
             memcpy(control.wifi_param_.wifi_password, &user_cmd[4], len);
@@ -241,6 +241,8 @@ void SerialCommander::SaveWifiParam(const char *user_cmd, CubliMiniControl &cont
         {
             cmd_printf("byte4 error\r\n");
         }
+        break;
+    case SCMD_BYTE_3_C:
         break;
     default:
         cmd_printf("byte3 error\r\n");

@@ -27,9 +27,9 @@ WifiConnectStatus_e WifiCommander::ConnectWifi()
         delay(500);
         printf("WIFI: connecting...\r\n");
         // 20s连接失败则退出连接
-        if (time_out_.WaitMs(1000 * 10))
+        if (time_out_.WaitMs(1000 * 20))
         {
-            printf("WIFI: connected fail!\r\n");
+            printf("WIFI: connected fail!\n");
             esp_wifi_disconnect();
             esp_wifi_stop();
             wifi_connect_status_ = WifiConnectStatus_e::eWIFI_FAIL;
